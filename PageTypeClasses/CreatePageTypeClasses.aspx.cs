@@ -253,7 +253,7 @@ namespace {0}
             if (String.IsNullOrEmpty(uiHint) == false)
                 return String.Format("{1}[UIHint({0})]", uiHint, CodeIndent);
 
-            string attribute = string.Format("[BackingType(typeof({0})]", definitionType.FullName);
+            string attribute = string.Format("[BackingType(typeof({0}))]", definitionType.FullName);
 
             if (BackingTypeCheckBox.Checked)
             {
