@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="False" CodeBehind="CreatePageTypeClasses.aspx.cs"
-    Inherits="Pride.Web.Plugins.CreatePageTypeClasses" Title="Create Page Type Classes"
+    Inherits="Web.Plugins.CreatePageTypeClasses" Title="Create Page Type Classes"
     EnableViewState="true" %>
 
 <%@ Register TagPrefix="EPiServerUI" Namespace="EPiServer.UI.WebControls" Assembly="EPiServer.UI" %>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pride.Web.Plugins {
+namespace Web.Plugins {
     
     
     public partial class CreatePageTypeClasses {

@@ -16,7 +16,7 @@ using EPiServer.Shell.WebForms;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web;
 
-namespace Pride.Web.Plugins
+namespace Web.Plugins
 {
     [GuiPlugIn(Area = PlugInArea.AdminMenu, DisplayName = "Create Classes from Page Types",
         RequiredAccess = AccessLevel.Administer, Url = "~/Plugins/CreatePageTypeClasses.aspx")]
