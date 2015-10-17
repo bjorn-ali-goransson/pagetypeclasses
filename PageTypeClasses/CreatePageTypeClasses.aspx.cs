@@ -230,6 +230,7 @@ namespace {0}
             Type definitionType = definition.Type.DefinitionType;
             string uiHint = null;
             if (IsType<PropertyString>(definitionType)
+                || IsType<PropertyLongString>(definitionType)
                 || IsType<PropertyPageReference>(definitionType)
                 || IsType<PropertyBoolean>(definitionType)
                 || IsType<PropertyXhtmlString>(definitionType)
