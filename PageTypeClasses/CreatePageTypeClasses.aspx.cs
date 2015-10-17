@@ -277,11 +277,11 @@ namespace {0}
             switch (propertyDataType)
             {
                 case PropertyDataType.Boolean:
-                    return "bool?";
+                    return "bool";
                 case PropertyDataType.Category:
                     return "CategoryCollection";
                 case PropertyDataType.Date:
-                    return "DateTime?";
+                    return "DateTime";
                 case PropertyDataType.FloatNumber:
                     return "double";
                 case PropertyDataType.LinkCollection:
@@ -294,7 +294,7 @@ namespace {0}
                         return "ContentArea";
                     return "string";
                 case PropertyDataType.Number:
-                    return "int?";
+                    return "int";
                 case PropertyDataType.PageReference:
                     return "PageReference";
                 case PropertyDataType.ContentReference:
