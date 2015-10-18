@@ -26,7 +26,7 @@
             
                 <div>
                     <asp:Label runat="server" AssociatedControlID="BackingTypeCheckBox">DefinitionType as BackingType instead of comment</asp:Label>
-                    <asp:Checkbox ID="BackingTypeCheckBox" runat="server"/>
+                    <asp:Checkbox ID="BackingTypeCheckBox" Checked="True" runat="server"/>
                 </div>
             
                 <div>
