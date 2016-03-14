@@ -56,7 +56,8 @@ using EPiServer.DataAnnotations;
 using EPiServer.Filters;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.SpecializedProperties;
-using EPiServer.Web;</asp:TextBox>
+using EPiServer.Web;
+using EPiServer.XForms;</asp:TextBox>
                 </div>
                 <div class="epi-indent">
                     <EPiServerUI:ToolButton OnClick="ButtonSubmitClick" runat="server" text="Create Classes" skinid="Import" />
