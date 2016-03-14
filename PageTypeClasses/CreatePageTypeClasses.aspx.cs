@@ -365,7 +365,7 @@ namespace {0}
 
         private string GetAvailablePageTypes(PageType pageType, PageTypeRepository repository)
         {
-            var allowedPageTypeNames = ServiceLocator.Current.GetInstance<IAvailableContentTypes>().GetSetting(pageType.Name).AllowedContentTypeNames
+            var allowedPageTypeNames = ServiceLocator.Current.GetInstance<ContentTypeAvailabilityService>().GetSetting(pageType.Name).AllowedContentTypeNames
                                                                                                                           .Select(name =>
                                                                                                                               {
                                                                                                                                   var container = GetClassContainer(name);
