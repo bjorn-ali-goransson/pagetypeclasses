@@ -139,7 +139,7 @@ namespace {0}
                             /*1*/ pageType.GUID,
                             /*2*/ pageType.Name,
                             /*3*/ pageType.FileName,
-                            /*4*/ pageType.Defaults.ChildOrderRule != FilterSortOrder.None ? String.Format("{1}{1}{1}this[MetaDataProperties.PageChildOrderRule] = FilterSortOrder.{0};{2}", pageType.Defaults.ChildOrderRule, CodeIndent, Environment.NewLine) : "",
+                            /*4*/ pageType.Defaults.ChildOrderRule != FilterSortOrder.None ? string.Format("{1}{1}{1}this[MetaDataProperties.PageChildOrderRule] = FilterSortOrder.{0};{2}", pageType.Defaults.ChildOrderRule, CodeIndent, Environment.NewLine) : "",
                             /*5*/ desc.Replace("\"", "'"),
                             /*6*/ pageType.SortOrder,
                             /*7*/ pageType.Defaults.VisibleInMenu.ToString(CultureInfo.InvariantCulture).ToLower(),
@@ -148,12 +148,12 @@ namespace {0}
                             /*10*/ GetProperties(pageType),
                             /*11*/ GetAvailablePageTypes(pageType, repository),
                             /*12*/ pageType.IsAvailable.ToString(CultureInfo.InvariantCulture).ToLower(),
-                            /*13*/ PageReference.IsNullOrEmpty(pageType.Defaults.ArchivePageLink) ? String.Empty : String.Format(@"{1}{1}{1}ArchiveLink = new PageReference(""{0}"");{2}", pageType.Defaults.ArchivePageLink, CodeIndent, Environment.NewLine),
+                            /*13*/ PageReference.IsNullOrEmpty(pageType.Defaults.ArchivePageLink) ? string.Empty : string.Format(@"{1}{1}{1}ArchiveLink = new PageReference(""{0}"");{2}", pageType.Defaults.ArchivePageLink, CodeIndent, Environment.NewLine),
                             /*14*/ pageType.Defaults.DefaultFrame.ID,
-                            /*15*/ String.IsNullOrEmpty(pageType.Defaults.DefaultPageName) ? String.Empty : String.Format(@"{1}{1}{1}PageName = ""{0}""{2}", pageType.Defaults.DefaultPageName, CodeIndent, Environment.NewLine),
+                            /*15*/ string.IsNullOrEmpty(pageType.Defaults.DefaultPageName) ? string.Empty : string.Format(@"{1}{1}{1}PageName = ""{0}""{2}", pageType.Defaults.DefaultPageName, CodeIndent, Environment.NewLine),
                             /*16*/ pageType.Defaults.PeerOrder,
-                            /*17*/ pageType.Defaults.StartPublishOffset == TimeSpan.Zero ? String.Empty : String.Format(@"{1}{1}{1}StartPublish = DateTime.Now.Add(TimeSpan.Parse(""{0}""));{2}", pageType.Defaults.StartPublishOffset, CodeIndent, Environment.NewLine),
-                            /*18*/ pageType.Defaults.StopPublishOffset == TimeSpan.Zero ? String.Empty : String.Format(@"{1}{1}{1}StopPublish = DateTime.Now.Add(TimeSpan.Parse(""{0}""));{2}", pageType.Defaults.StopPublishOffset, CodeIndent, Environment.NewLine));
+                            /*17*/ pageType.Defaults.StartPublishOffset == TimeSpan.Zero ? string.Empty : string.Format(@"{1}{1}{1}StartPublish = DateTime.Now.Add(TimeSpan.Parse(""{0}""));{2}", pageType.Defaults.StartPublishOffset, CodeIndent, Environment.NewLine),
+                            /*18*/ pageType.Defaults.StopPublishOffset == TimeSpan.Zero ? string.Empty : string.Format(@"{1}{1}{1}StopPublish = DateTime.Now.Add(TimeSpan.Parse(""{0}""));{2}", pageType.Defaults.StopPublishOffset, CodeIndent, Environment.NewLine));
                         sw.Flush();
                     }
                 }
@@ -196,7 +196,7 @@ namespace {0}
                         stringBuilder.AppendFormat("{0}[ScaffoldColumn(false)]{1}", CodeIndent, Environment.NewLine);
 
                     string backingType = GetBackingType(definition);
-                    if (String.IsNullOrEmpty(backingType) == false)
+                    if (string.IsNullOrEmpty(backingType) == false)
                         stringBuilder.AppendLine(backingType);
 
                     stringBuilder.AppendFormat(
@@ -207,14 +207,14 @@ namespace {0}
         public virtual {5} {6} {{ get; set; }}",
                         /*0*/ CodeIndent,
                         /*1*/ (definition.EditCaption ?? definition.Name).Replace("\"", "'"),
-                        /*2*/ (definition.HelpText ?? String.Empty).Replace("\"", "'"),
+                        /*2*/ (definition.HelpText ?? string.Empty).Replace("\"", "'"),
                         /*3*/ sortOrder,
                         /*4*/ definition.Tab.Name,
                         /*5*/ GetDataType(definition.Type),
                         /*6*/ newPropertyName);
 
-                    stringBuilder.AppendLine(String.Empty);
-                    stringBuilder.AppendLine(String.Empty);
+                    stringBuilder.AppendLine(string.Empty);
+                    stringBuilder.AppendLine(string.Empty);
 
                     sortOrder += 100;
                 }
@@ -240,7 +240,7 @@ namespace {0}
                 || IsType<PropertyLinkCollection>(definitionType)
                 || IsType<PropertyDate>(definitionType)
                 )
-                return String.Empty;
+                return string.Empty;
 
             if (IsType<PropertyDropDownList>(definitionType))
                 uiHint = @"""DropDownList""";
@@ -251,8 +251,8 @@ namespace {0}
             if (IsType<PropertyDocumentUrl>(definitionType))
                 uiHint = "UIHint.Document";
 
-            if (String.IsNullOrEmpty(uiHint) == false)
-                return String.Format("{1}[UIHint({0})]", uiHint, CodeIndent);
+            if (string.IsNullOrEmpty(uiHint) == false)
+                return string.Format("{1}[UIHint({0})]", uiHint, CodeIndent);
 
             string attribute = string.Format("[BackingType(typeof({0}))]", definitionType.FullName);
 
@@ -369,15 +369,15 @@ namespace {0}
                                                                                                                           .Select(name =>
                                                                                                                               {
                                                                                                                                   var container = GetClassContainer(name);
-                                                                                                                                  string className = String.IsNullOrEmpty(container) ? GetClassName(name) : container + "." + GetClassName(name);
-                                                                                                                                  return String.Format("typeof({0})", className);
+                                                                                                                                  string className = string.IsNullOrEmpty(container) ? GetClassName(name) : container + "." + GetClassName(name);
+                                                                                                                                  return string.Format("typeof({0})", className);
                                                                                                                               })
                                                                                                                           .ToList();
             if (allowedPageTypeNames.Any())
             {
-                return String.Format(@"{0}[AvailableContentTypes(Include = new[] {{ {1} }})]", Environment.NewLine, String.Join(",", allowedPageTypeNames));
+                return string.Format(@"{0}[AvailableContentTypes(Include = new[] {{ {1} }})]", Environment.NewLine, string.Join(",", allowedPageTypeNames));
             }
-            return String.Empty;
+            return string.Empty;
         }
     }
 }
