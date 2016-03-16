@@ -239,6 +239,7 @@ namespace {0}
                 || IsType<PropertyUrl>(definitionType)
                 || IsType<PropertyLinkCollection>(definitionType)
                 || IsType<PropertyDate>(definitionType)
+                || IsType<PropertyXForm>(definitionType)
                 )
                 return string.Empty;
 
