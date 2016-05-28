@@ -19,7 +19,7 @@ using EPiServer.Web;
 namespace Web.Plugins
 {
     [GuiPlugIn(Area = PlugInArea.AdminMenu, DisplayName = "Create Classes from Page Types",
-        RequiredAccess = AccessLevel.Administer, Url = "~/Plugins/Default.aspx")]
+        RequiredAccess = AccessLevel.Administer, Url = "~/PageTypeClasses/Default.aspx")]
     public partial class CreatePageTypeClasses : WebFormsBase
     {
         private StringBuilder _changeLog;
