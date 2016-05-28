@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="False" CodeBehind="CreatePageTypeClasses.aspx.cs"
+﻿<%@ Page Language="C#" AutoEventWireup="False" CodeBehind="Default.aspx.cs"
     Inherits="Web.Plugins.CreatePageTypeClasses" Title="Create Page Type Classes"
     EnableViewState="true" %>
 
