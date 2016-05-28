@@ -366,6 +366,8 @@ namespace {0}
 
         private string GetAvailablePageTypes(PageType pageType, PageTypeRepository repository)
         {
+            // If you're not on EPiServer CMS 8, uncomment these lines (leave the last return)
+            
             var allowedPageTypeNames = ServiceLocator.Current.GetInstance<ContentTypeAvailabilityService>().GetSetting(pageType.Name).AllowedContentTypeNames
                                                                                                                           .Select(name =>
                                                                                                                               {
